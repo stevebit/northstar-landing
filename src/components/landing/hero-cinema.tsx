@@ -256,63 +256,6 @@ export function HeroCinema() {
           ))}
         </div>
       </div>
-
-      <FloatingNova />
     </section>
-  );
-}
-
-function FloatingNova() {
-  const [show, setShow] = useState(false);
-  const [dismissed, setDismissed] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => {
-      const y = window.scrollY;
-      setShow(y > 520 && y < 2800);
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  if (dismissed || !show) return null;
-
-  return (
-    <div className="pointer-events-none fixed bottom-24 left-3 right-3 z-40 flex justify-start md:bottom-6 md:left-auto md:right-6 md:max-w-sm">
-      <div className="pointer-events-auto flex items-end gap-2 rounded-2xl border-2 border-ink bg-card p-2 pr-3 shadow-[5px_5px_0_0_var(--color-ink)]">
-        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border-2 border-ink">
-          <video
-            src="/videos/nova-idle.mp4"
-            poster="/images/nova-avatar.jpg"
-            className="h-full w-full object-cover object-top"
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-        </div>
-        <div className="min-w-0 py-1">
-          <p className="text-xs font-bold text-primary">Nova · NP guide</p>
-          <p className="text-sm font-semibold leading-snug text-fg">
-            Still reading? I can see your family today.
-          </p>
-          <a
-            href={REGISTER_URL}
-            className="mt-1 inline-flex items-center gap-1 text-xs font-bold text-primary underline-offset-2 hover:underline"
-          >
-            Join now <ArrowRight className="h-3 w-3" />
-          </a>
-        </div>
-        <button
-          type="button"
-          className="mb-auto ml-1 text-fg-subtle hover:text-fg"
-          aria-label="Dismiss Nova tip"
-          onClick={() => setDismissed(true)}
-        >
-          ×
-        </button>
-      </div>
-    </div>
   );
 }

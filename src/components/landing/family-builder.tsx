@@ -15,7 +15,10 @@ export function FamilyBuilder() {
   }, [adults, kids]);
 
   const price = mode === "plus" ? 59.95 : 79.95;
-  const label = mode === "plus" ? "My Northstar+" : "Northstar Family";
+  const label =
+    mode === "plus"
+      ? "Northstar primary care"
+      : "Northstar family primary care";
   const covered =
     mode === "plus"
       ? "You — unlimited visits"
@@ -168,13 +171,7 @@ function CounterRow({
   );
 }
 
-function AvatarChip({
-  label,
-  tone,
-}: {
-  label: string;
-  tone: "adult" | "kid";
-}) {
+function AvatarChip({ label, tone }: { label: string; tone: "adult" | "kid" }) {
   return (
     <span
       className={cn(

@@ -8,7 +8,10 @@ export const PROVIDER_LOGIN_URL = `${APP_BASE}/doctor/login`;
 export const SHARE = {
   title: "I stopped waiting months for a family doctor.",
   text: "Northstar Medical = unlimited nurse practitioner care for your whole Ontario family. Same-day virtual visits. I'm joining — you should too.",
-  url: typeof window !== "undefined" ? window.location.href : "https://northstarmed.ca",
+  url:
+    typeof window !== "undefined"
+      ? window.location.href
+      : "https://northstarmed.ca",
 };
 
 export const marqueeItems = [
@@ -101,17 +104,21 @@ export const services = [
 export const plans = [
   {
     id: "visit",
-    name: "One visit",
+    name: "One Time Visit",
     price: 39.95,
     unit: "visit",
     blurb: "Try it once. No subscription guilt.",
-    features: ["Same-day slots often open", "NP consult", "Rx when appropriate"],
+    features: [
+      "Same-day slots often open",
+      "NP consult",
+      "Rx when appropriate",
+    ],
     cta: "Book a visit",
     highlight: false,
   },
   {
     id: "plus",
-    name: "My Northstar+",
+    name: "Northstar primary care",
     price: 59.95,
     unit: "mo",
     blurb: "Unlimited care for one human.",
@@ -126,7 +133,7 @@ export const plans = [
   },
   {
     id: "family",
-    name: "Northstar Family",
+    name: "Northstar family primary care",
     price: 79.95,
     unit: "mo",
     blurb: "The plan people text their group chat about.",
