@@ -352,9 +352,15 @@ export function topicById(id: NovaTopicId): NovaTopic {
   return topic;
 }
 
-export const NOVA_CHAT_OPEN_EVENT = "northstar:nova-chat-open";
+export const NOVA_STAGE_OPEN_EVENT = "northstar:nova-stage-open";
+/** @deprecated Use NOVA_STAGE_OPEN_EVENT — kept so older listeners still open the avatar. */
+export const NOVA_CHAT_OPEN_EVENT = NOVA_STAGE_OPEN_EVENT;
+
+export function openNovaStage() {
+  if (typeof window === "undefined") return;
+  window.dispatchEvent(new CustomEvent(NOVA_STAGE_OPEN_EVENT));
+}
 
 export function openNovaChat() {
-  if (typeof window === "undefined") return;
-  window.dispatchEvent(new CustomEvent(NOVA_CHAT_OPEN_EVENT));
+  openNovaStage();
 }

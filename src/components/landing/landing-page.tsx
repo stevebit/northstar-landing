@@ -8,7 +8,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { FamilyBuilder } from "@/components/landing/family-builder";
 import { HeroCinema } from "@/components/landing/hero-cinema";
-import { NovaChat } from "@/components/landing/nova-chat";
+import { NovaStage } from "@/components/landing/nova-stage";
 import { ShareButton } from "@/components/landing/share-button";
 import { SiteHeader } from "@/components/landing/site-header";
 import { WaitFlip } from "@/components/landing/wait-flip";
@@ -22,7 +22,7 @@ import {
   services,
   steps,
 } from "@/data/content";
-import { openNovaChat } from "@/data/nova-guide";
+import { openNovaStage } from "@/data/nova-guide";
 import { cn } from "@/lib/utils";
 
 export function LandingPage() {
@@ -237,7 +237,7 @@ export function LandingPage() {
               Still unsure? Ask{" "}
               <button
                 type="button"
-                onClick={() => openNovaChat()}
+                onClick={() => openNovaStage()}
                 className="font-semibold text-primary underline-offset-4 hover:underline"
               >
                 Nova
@@ -390,7 +390,7 @@ export function LandingPage() {
         </div>
       </footer>
 
-      <NovaChat />
+      <NovaStage />
 
       <div className="dock-safe fixed inset-x-0 bottom-0 z-50 border-t-2 border-ink bg-bg/95 p-3 backdrop-blur-xl md:hidden">
         <div className="mx-auto flex max-w-lg gap-2">
