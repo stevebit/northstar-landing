@@ -1,8 +1,4 @@
-import {
-  ArrowRight,
-  Check,
-  Star,
-} from "lucide-react";
+import { ArrowRight, Check, Star } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -12,6 +8,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { FamilyBuilder } from "@/components/landing/family-builder";
 import { HeroCinema } from "@/components/landing/hero-cinema";
+import { NovaChat } from "@/components/landing/nova-chat";
 import { ShareButton } from "@/components/landing/share-button";
 import { SiteHeader } from "@/components/landing/site-header";
 import { WaitFlip } from "@/components/landing/wait-flip";
@@ -25,6 +22,7 @@ import {
   services,
   steps,
 } from "@/data/content";
+import { openNovaChat } from "@/data/nova-guide";
 import { cn } from "@/lib/utils";
 
 export function LandingPage() {
@@ -78,11 +76,15 @@ export function LandingPage() {
               key={step.n}
               className="snap-start w-[78vw] shrink-0 brutal-card p-6 sm:w-auto"
             >
-              <p className="font-mono text-sm font-bold text-primary">{step.n}</p>
+              <p className="font-mono text-sm font-bold text-primary">
+                {step.n}
+              </p>
               <h3 className="mt-4 font-display text-2xl tracking-tight">
                 {step.title}
               </h3>
-              <p className="mt-2 text-sm text-fg-muted text-pretty">{step.body}</p>
+              <p className="mt-2 text-sm text-fg-muted text-pretty">
+                {step.body}
+              </p>
             </article>
           ))}
         </div>
@@ -232,13 +234,22 @@ export function LandingPage() {
               Questions people actually ask before they share.
             </h2>
             <p className="mt-3 text-sm text-fg-muted">
-              Still unsure?{" "}
+              Still unsure? Ask{" "}
+              <button
+                type="button"
+                onClick={() => openNovaChat()}
+                className="font-semibold text-primary underline-offset-4 hover:underline"
+              >
+                Nova
+              </button>{" "}
+              or email{" "}
               <a
                 href="mailto:general@northstarmed.ca"
                 className="font-semibold text-primary underline-offset-4 hover:underline"
               >
                 general@northstarmed.ca
               </a>
+              .
             </p>
           </div>
           <Accordion type="single" collapsible className="space-y-3">
@@ -266,8 +277,9 @@ export function LandingPage() {
               Be the person who fixed healthcare for the group chat.
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-sm text-primary-fg/85 sm:text-base">
-              Join Northstar Family. Unlimited NP care for the household. Then
-              hit share — waitlists spread by silence. This spreads by link.
+              Join Northstar family primary care. Unlimited NP care for the
+              household. Then hit share — waitlists spread by silence. This
+              spreads by link.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button variant="ink" size="xl" asChild>
@@ -377,6 +389,8 @@ export function LandingPage() {
           © 2026 Northstar Medical · Standalone marketing preview
         </div>
       </footer>
+
+      <NovaChat />
 
       <div className="dock-safe fixed inset-x-0 bottom-0 z-50 border-t-2 border-ink bg-bg/95 p-3 backdrop-blur-xl md:hidden">
         <div className="mx-auto flex max-w-lg gap-2">

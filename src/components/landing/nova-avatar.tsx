@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import { openNovaChat } from "@/data/nova-guide";
 import { cn } from "@/lib/utils";
 
 const LINES = [
-  "Hey — I'm Nova. An NP on your side.",
+  "Hey — I'm Nova. Tap me with a question.",
   "Ontario families wait months. You don't have to.",
   "Same-day visits. Whole household. One plan.",
-  "Ready when you are. Two minutes to join.",
+  "Ask about booking, plans, or emergencies.",
 ];
 
 type Props = {
@@ -43,12 +44,15 @@ export function NovaAvatar({
   const dim = size === "lg" ? "h-28 w-28 sm:h-36 sm:w-36" : "h-16 w-16";
 
   return (
-    <div
+    <button
+      type="button"
+      onClick={() => openNovaChat()}
       className={cn(
-        "relative flex items-end gap-3 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+        "relative flex items-end gap-3 text-left transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
         entered ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0",
         className,
       )}
+      aria-label="Open Nova chat"
     >
       <div className="relative shrink-0">
         <span
@@ -69,7 +73,7 @@ export function NovaAvatar({
             muted
             loop
             playsInline
-            aria-label="Nova, Northstar nurse practitioner guide"
+            aria-hidden
           />
         </div>
         <span className="absolute -bottom-1 left-1/2 z-10 flex -translate-x-1/2 items-center gap-1 rounded-full border-2 border-ink bg-card px-2 py-0.5 text-[0.6rem] font-bold uppercase tracking-wide text-fg shadow-sm">
@@ -95,6 +99,6 @@ export function NovaAvatar({
           className="absolute -left-2 bottom-3 h-3 w-3 rotate-45 border-b-2 border-l-2 border-ink bg-card"
         />
       </div>
-    </div>
+    </button>
   );
 }
