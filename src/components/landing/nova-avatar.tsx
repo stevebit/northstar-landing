@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NovaFace } from "@/components/landing/nova-face";
-import { openNovaChat } from "@/data/nova-guide";
+import { openNovaStage } from "@/data/nova-guide";
 import { cn } from "@/lib/utils";
 
 const LINES = [
@@ -47,13 +47,13 @@ export function NovaAvatar({
   return (
     <button
       type="button"
-      onClick={() => openNovaChat()}
+      onClick={() => openNovaStage()}
       className={cn(
         "relative flex items-end gap-3 text-left transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
         entered ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0",
         className,
       )}
-      aria-label="Open Nova chat — glossy robot site guide"
+      aria-label="Open Nova — glossy robot site guide"
     >
       <div className="relative shrink-0">
         <span
