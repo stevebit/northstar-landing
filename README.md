@@ -8,7 +8,7 @@ Standalone marketing landing page for **Northstar Medical** (Ontario virtual pri
 ## Live concept
 
 - Cinematic hero film loop
-- **Nova** site-guide avatar with a visitor chat (booking, plans, OHIP, emergencies, after-visit)
+- **Nova** glossy blue robot site guide with a visitor chat (booking, plans, OHIP, emergencies, after-visit)
 - Wait-list flip, family plan builder, share CTAs
 - Mobile sticky dock
 
@@ -29,7 +29,8 @@ npm run build
 ## Where Nova lives
 
 - Floating **Ask Nova** launcher on the landing page (`src/components/landing/nova-chat.tsx`)
-- Hero Nova portrait also opens the same chat (`src/components/landing/nova-avatar.tsx`)
+- Hero Nova portrait (glossy robot, not a clinician) also opens the same chat (`src/components/landing/nova-avatar.tsx`)
+- Robot crops: `public/images/nova-robot-face.jpg`, `nova-robot-launcher.jpg`, `nova-robot-portrait.jpg`
 - Locked answers + keyword matching: `src/data/nova-guide.ts` (no external AI, no PHI collection)
 - Signup CTAs keep pointing at https://app.northstarmed.ca/onboarding/get-started
 

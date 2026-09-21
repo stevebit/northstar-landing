@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import { ArrowRight, Send, X } from "lucide-react";
+import { NovaFace } from "@/components/landing/nova-face";
 import { Button } from "@/components/ui/button";
 import { REGISTER_URL } from "@/data/content";
 import {
@@ -170,7 +171,7 @@ export function NovaChat() {
               className="flex h-[min(38rem,calc(100dvh-1.5rem))] w-[min(26rem,calc(100vw-1.5rem))] flex-col overflow-hidden rounded-2xl border-2 border-ink bg-card shadow-[6px_6px_0_0_var(--color-ink)] md:h-[min(36rem,calc(100dvh-5.5rem))]"
             >
               <header className="flex items-center gap-3 border-b-2 border-ink bg-bg-hot px-3 py-2.5">
-                <NovaFace size="sm" />
+                <NovaFace size="sm" variant="face" />
                 <div className="min-w-0 flex-1">
                   <p
                     id={titleId}
@@ -179,7 +180,7 @@ export function NovaChat() {
                     Nova
                   </p>
                   <p className="text-[0.7rem] font-semibold text-fg-muted">
-                    Site guide · not a clinician
+                    Robot site guide · not a clinician
                   </p>
                 </div>
                 <button
@@ -302,14 +303,14 @@ export function NovaChat() {
                 )}
                 aria-expanded={false}
                 aria-controls={dialogId}
-                aria-label="Open Nova chat"
+                aria-label="Open Nova chat — glossy robot site guide"
               >
                 <span className="relative">
                   <span
                     className="absolute -inset-1 animate-[pulse-ring_2s_ease-out_infinite] rounded-full bg-pulse/40"
                     aria-hidden
                   />
-                  <NovaFace size="md" />
+                  <NovaFace size="md" variant="launcher" />
                 </span>
                 <span className="pr-1 text-left">
                   <span className="block text-xs font-bold text-primary">
@@ -356,28 +357,5 @@ function ChatBubble({ message }: { message: ChatMessage }) {
         ) : null}
       </div>
     </div>
-  );
-}
-
-function NovaFace({ size }: { size: "sm" | "md" }) {
-  const dim = size === "sm" ? "h-10 w-10" : "h-12 w-12";
-  return (
-    <span
-      className={cn(
-        "relative block shrink-0 overflow-hidden rounded-full border-2 border-ink bg-bg",
-        dim,
-      )}
-    >
-      <video
-        className="h-full w-full object-cover object-top"
-        src="/videos/nova-idle.mp4"
-        poster="/images/nova-avatar.jpg"
-        autoPlay
-        muted
-        loop
-        playsInline
-        aria-hidden
-      />
-    </span>
   );
 }
