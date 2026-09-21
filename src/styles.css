@@ -276,8 +276,7 @@
 }
 
 .nova-stage-ground {
-  background:
-    radial-gradient(ellipse at 50% 42%, #12324a 0%, #050814 58%, #02040a 100%);
+  background: #000;
 }
 
 .nova-avatar-float {

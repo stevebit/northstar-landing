@@ -163,9 +163,9 @@ export function NovaStage() {
                 ))}
               </div>
 
-              <div className="relative mx-auto flex max-h-[min(46vh,22rem)] w-full max-w-[20rem] items-center justify-center sm:max-h-[min(52vh,26rem)] sm:max-w-[24rem] md:max-h-[min(58vh,28rem)]">
+              <div className="relative mx-auto flex h-[min(52vh,26rem)] w-[min(92vw,26rem)] items-center justify-center sm:h-[min(60vh,32rem)] sm:w-[min(80vw,32rem)] md:h-[min(66vh,36rem)] md:w-[36rem]">
                 <span
-                  className="pointer-events-none absolute inset-[12%] rounded-full bg-[#0d92ad]/25 blur-3xl"
+                  className="pointer-events-none absolute inset-[18%] rounded-full bg-[#0d92ad]/20 blur-3xl"
                   aria-hidden
                 />
                 <NovaFace
