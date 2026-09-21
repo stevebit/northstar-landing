@@ -4,7 +4,7 @@ export const NOVA_FALLBACK =
   "I can help with booking, plans, what to expect, and emergencies — tap a topic below.";
 
 export const NOVA_WELCOME =
-  "Hey — I'm Nova. I can walk you through booking, plans, what's included, and what to do in an emergency. Tap a topic below. No health details needed.";
+  "Hey — I'm Nova, your site guide robot. I can walk you through booking, plans, what's included, and what to do in an emergency. Tap a topic below. No health details needed.";
 
 export const NOVA_CLINICAL_REFUSAL =
   "I'm just a site guide — I can't diagnose, prescribe, triage you as a clinician, or read labs or photos. If it feels severe or life-threatening, call 911 or go to the nearest emergency department. For everyday primary care when you're stable enough to join from home, book a visit and a licensed provider can help.";

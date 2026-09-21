@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { NovaFace } from "@/components/landing/nova-face";
 import { openNovaChat } from "@/data/nova-guide";
 import { cn } from "@/lib/utils";
 
 const LINES = [
-  "Hey — I'm Nova. Tap me with a question.",
+  "Hey — I'm Nova, your site guide. Tap me with a question.",
   "Ontario families wait months. You don't have to.",
   "Same-day visits. Whole household. One plan.",
   "Ask about booking, plans, or emergencies.",
@@ -52,30 +53,14 @@ export function NovaAvatar({
         entered ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0",
         className,
       )}
-      aria-label="Open Nova chat"
+      aria-label="Open Nova chat — glossy robot site guide"
     >
       <div className="relative shrink-0">
         <span
           className="absolute -inset-1 animate-[pulse-ring_2s_ease-out_infinite] rounded-full bg-pulse/40"
           aria-hidden
         />
-        <div
-          className={cn(
-            "relative overflow-hidden rounded-full border-[3px] border-ink bg-bg shadow-[4px_4px_0_0_var(--color-ink)]",
-            dim,
-          )}
-        >
-          <video
-            className="h-full w-full object-cover object-top"
-            src="/videos/nova-idle.mp4"
-            poster="/images/nova-avatar.jpg"
-            autoPlay
-            muted
-            loop
-            playsInline
-            aria-hidden
-          />
-        </div>
+        <NovaFace size={size} variant="portrait" className={dim} />
         <span className="absolute -bottom-1 left-1/2 z-10 flex -translate-x-1/2 items-center gap-1 rounded-full border-2 border-ink bg-card px-2 py-0.5 text-[0.6rem] font-bold uppercase tracking-wide text-fg shadow-sm">
           <span className="h-1.5 w-1.5 rounded-full bg-success animate-pulse" />
           Online
